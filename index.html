@@ -12,6 +12,22 @@
     @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
     body {
       font-family: "Roboto Mono", monospace;
+      padding-top: 50px; /* Adjust for the height of the top bar */
+      padding-bottom: 50px; /* Adjust for the height of the bottom bar */
+    }
+    .fixed-top {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10; /* Ensure it stays above other content */
+    }
+    .fixed-bottom {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 10; /* Ensure it stays above other content */
     }
   </style>
 </head>
@@ -21,7 +37,7 @@
   >
     <!-- Top bar -->
     <div
-      class="flex justify-between items-center bg-[#1a1a1a] border-b border-[#2a2a2a] rounded-t-lg px-4 py-2 select-none"
+      class="fixed-top flex justify-between items-center bg-[#1a1a1a] border-b border-[#2a2a2a] rounded-b-lg px-4 py-2 select-none"
     >
       <div class="flex space-x-2">
         <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
@@ -36,7 +52,7 @@
     </div>
 
     <!-- Articles grid 3 columns -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px border-b border-[#2a2a2a]">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px border-b border-[#2a2a2a] mt-12">
       <!-- Article 1 -->
       <article class="bg-[#121212] p-4 flex flex-col">
         <img
@@ -63,7 +79,7 @@
       </article>
 
       <!-- Article 2 -->
-     <article class="bg-[#121212] p-4 border-t sm:border-t-0 sm:border-l border-[#2a2a2a] flex flex-col">
+      <article class="bg-[#121212] p-4 border-t sm:border-t-0 sm:border-l border-[#2a2a2a] flex flex-col">
         <img
           alt="Visual representation of secure user data persistence with Zustand and encrypted storage"
           class="w-full h-auto mb-3 rounded-sm border border-[#2a2a2a]"
@@ -188,7 +204,7 @@
 
     <!-- Bottom bar -->
     <div
-      class="flex justify-between items-center bg-[#1a1a1a] border-t border-[#2a2a2a] rounded-b-lg px-4 py-2 text-xs select-none"
+      class="fixed-bottom flex justify-between items-center bg-[#1a1a1a] border-t border-[#2a2a2a] rounded-t-lg px-4 py-2 text-xs select-none"
     >
       <div>
         <span class="text-[#7a7a7a]">❘</span> main
